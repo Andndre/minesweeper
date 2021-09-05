@@ -1,14 +1,19 @@
 html, body {
   margin: 0;
   padding: 1em;
+  font-size: 2em;
   background-color: rgb(240, 240, 240);
 }
 
-p{
-  font-size: medium;
+input{
+  height: 50px;
+  width: 200px;
 }
 
 button{
+  font-size: .5em;
+  width: 150px;
+  height: 50px;
   margin-top: 1em;
 }
 
