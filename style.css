@@ -1,0 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 1em;
+  background-color: rgb(240, 240, 240);
+}
+
+p{
+  font-size: medium;
+}
+
+button{
+  margin-top: 1em;
+}
+
+canvas {
+  margin-top: 3em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;  
+  border: 3px solid black;
+}
