@@ -10,8 +10,19 @@
     <p id="game_status">.</p>
     <p id="remaining">.</p>
     <p>Trap chance (%)</p>
-    <input type="number" id="trap_chance" max="100" min="0">
+    <input type="number" id="trap_chance" value=10 oninput="minMaxCheck(this, 0, 100)">
     <p>Board size</p>
-    <input type="number" id="board_size" max="50" min="3"><br>
+    <input type="number" id="board_size" value=10 oninput="minMaxCheck(this, 0, 50)"><br>
     <button id="reload" >reload</button>
+    <script>
+      function minMaxCheck(object, min, max){
+        if(object.value == 0) return true;
+        if (object.value > max){
+          object.value = max;
+        }else if(object.value < min){
+          object.value = min;
+        }
+        return true;
+      }
+    </script>
 </body></html>

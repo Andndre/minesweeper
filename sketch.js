@@ -50,6 +50,12 @@ function setup() {
 	let tcInput = document.getElementById("trap_chance");
 
 	document.getElementById("reload").onclick = () => {
+		if (bsInput.value < 3) {
+			bsInput.value = 3;
+		}
+		if (tcInput.value == 0) {
+			tcInput.value = 0;
+		}
 		setting(bsInput.value, tcInput.value);
 		redraw();
 	};
@@ -83,34 +89,20 @@ function win() {
 	changeTextById("game_status", "You win!");
 }
 
-function mousePressed() {
+function mouseClicked() {
 	if (mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height) return;
-	let found = false;
-	for (let row of board) {
-		for (let cell of row) {
-			if (cell.contains(mouseX, mouseY)) {
-				if (!cell.revealed) {
-					cell.reveal();
-					if (!cell.trap) {
-						revealed++;
-						changeTextById(
-							"remaining",
-							getRemaining() + " remaining.."
-						);
-						redraw();
-					}
-					if (revealed == boardSize * boardSize - trapCount) {
-						win();
-					}
-				}
-				found = true;
-				break;
-			}
+	let cell = board[floor(mouseY / w)][floor(mouseX / w)];
+	if (!cell.revealed) {
+		cell.reveal();
+		if (!cell.trap) {
+			revealed++;
+			changeTextById("remaining", getRemaining() + " remaining..");
 		}
-		if (found) {
-			break;
+		if (revealed == boardSize * boardSize - trapCount) {
+			win();
 		}
 	}
+	redraw();
 }
 
 function draw() {
