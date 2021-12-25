@@ -40,6 +40,8 @@ function setting(bs, tc) {
 			}
 		}
 	}
+	changeTextById("game_status", ".");
+	changeTextById("remaining", getRemaining() + " remaining..");
 }
 
 function setup() {
