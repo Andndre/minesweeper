@@ -1,3 +1,3 @@
 # Minesweeper
 
-play [here](https://agungandre01.github.io/minesweeper/)
+play [here](https://andndre.github.io/minesweeper/)
