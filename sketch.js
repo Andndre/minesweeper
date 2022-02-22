@@ -45,6 +45,7 @@ function setting(bs, tc) {
 }
 
 function setup() {
+	pixelDensity(1);
 	boardWidth = windowWidth > windowHeight ? windowHeight : windowWidth;
 	createCanvas(boardWidth - boardWidth * 0.2, boardWidth - boardWidth * 0.2);
 	setting(10, 10);
